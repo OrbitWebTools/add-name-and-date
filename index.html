@@ -24,20 +24,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@700;800;900&display=swap" rel="stylesheet">
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "Passport Photo Name & Date Maker",
-  "url": "https://orbitwebtools.github.io/add-name-and-date/",
-  "applicationCategory": "PhotoEditorApplication",
-  "operatingSystem": "All, Android, iOS, Windows, Mac",
-  "description": "Free online tool to add name and date to passport size photo and resize it to 20KB–50KB for SSC CGL, CHSL, UPSC, IBPS, Railway and all Indian government exam portals.",
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" },
-  "creator": { "@type": "Organization", "name": "OrbitWebTools", "url": "https://orbitwebtools.github.io/" }
-}
-</script>
-
 <style>
 :root {
   --bg: #f8fafc;
@@ -49,7 +35,6 @@
   --text-muted: #64748b;
   --border: #e2e8f0;
   --success: #10b981;
-  --warning: #f59e0b;
   --radius: 24px;
   --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
   --shadow-lg: 0 20px 40px -10px rgba(2, 132, 199, 0.15);
@@ -108,13 +93,19 @@ canvas { display: block; max-width: 100%; height: auto; border-radius: 8px; box-
 .btn-download { width: 100%; background: linear-gradient(135deg, var(--primary), #3b82f6); color: white; border: none; padding: 18px; border-radius: 14px; font-size: 1.1rem; font-weight: 700; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 10px 20px -5px rgba(2, 132, 199, 0.4); display: flex; justify-content: center; align-items: center; gap: 8px; }
 .btn-download:hover { transform: translateY(-2px); box-shadow: 0 15px 25px -5px rgba(2, 132, 199, 0.5); }
 
-/* SEO Section (Hidden by Default) */
-.seo-toggle-container { text-align: center; margin: 20px 0 40px; }
-.seo-toggle-btn { background: none; border: 2px solid var(--primary); color: var(--primary); padding: 12px 24px; border-radius: 100px; font-weight: 700; cursor: pointer; transition: 0.2s; font-size: 0.95rem; }
-.seo-toggle-btn:hover { background: var(--primary-light); }
+/* --- THE NEW PREMIUM SEO FADE SECTION --- */
+.seo-wrapper { position: relative; max-width: 800px; margin: 0 auto 60px; background: var(--surface); border-radius: var(--radius); border: 1px solid var(--border); box-shadow: var(--shadow-sm); overflow: hidden; }
+.seo-content { padding: 40px; max-height: 280px; overflow: hidden; transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
+.seo-content.expanded { max-height: 5000px; } /* Large enough to hold all text */
 
-.hidden-seo { display: none; }
-.seo-content { max-width: 800px; margin: 0 auto 60px; padding: 40px; background: var(--surface); border-radius: var(--radius); border: 1px solid var(--border); box-shadow: var(--shadow-sm); }
+/* The Gradient Fade that hides the text */
+.seo-fade { position: absolute; bottom: 0; left: 0; right: 0; height: 180px; background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 80%); display: flex; align-items: flex-end; justify-content: center; padding-bottom: 25px; transition: opacity 0.3s; }
+.seo-content.expanded + .seo-fade { opacity: 0; pointer-events: none; }
+
+.seo-toggle-btn { background: white; border: 2px solid var(--primary); color: var(--primary); padding: 12px 28px; border-radius: 100px; font-weight: 700; cursor: pointer; transition: 0.2s; font-size: 0.95rem; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+.seo-toggle-btn:hover { background: var(--primary-light); transform: translateY(-2px); }
+.collapse-btn-container { text-align: center; padding-bottom: 30px; display: none; }
+
 .seo-content h2 { font-family: 'Outfit', sans-serif; font-size: 1.75rem; margin-top: 30px; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 2px solid var(--bg); color: var(--text-main); }
 .seo-content h2:first-child { margin-top: 0; }
 .seo-content h3 { font-family: 'Outfit', sans-serif; font-size: 1.3rem; margin-top: 25px; margin-bottom: 10px; color: var(--primary); }
@@ -198,88 +189,94 @@ canvas { display: block; max-width: 100%; height: auto; border-radius: 8px; box-
   </div>
 </div>
 
-<div class="seo-toggle-container">
-    <button onclick="toggleSEO()" id="seoToggleBtn" class="seo-toggle-btn">📚 Read Ultimate Photo Guide for Exams (1000+ Words)</button>
+<div class="seo-wrapper" id="seoWrapper">
+    <article class="seo-content" id="seoContentBox">
+        <h2>Comprehensive Guide: Add Name and Date to Passport Photo Online Free</h2>
+        <p>Millions of Indian students apply for government jobs every year. However, according to official data, thousands of applications for exams like SSC CGL, SSC CHSL, UPSC Civil Services, and Railway RRB are rejected outright. The most common reason? <strong>An incorrect passport-size photograph.</strong></p>
+        <p>If you are looking for a reliable way to <strong>add name and date to passport photo online free</strong>, you are in the right place. OrbitWebTools has developed a highly advanced, browser-based utility that not only adds your Name and Date of Photo (DOP) but also acts as an automatic <strong>SSC photo resizer online (20kb to 50kb)</strong>.</p>
+
+        <h2>Official Exam Photo Requirements (2026 Guidelines)</h2>
+        <p>Every recruitment board has strict dimensional and byte-size requirements. Before you upload, ensure your image matches the criteria below. Our tool automatically configures your image to fit these standard requirements.</p>
+        
+        <table class="seo-table">
+            <thead>
+                <tr>
+                    <th>Recruitment Board</th>
+                    <th>Required File Size</th>
+                    <th>Dimensions</th>
+                    <th>Mandatory Text Strip</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>SSC (Staff Selection Commission)</strong></td>
+                    <td>20 KB to 50 KB</td>
+                    <td>3.5 cm (W) x 4.5 cm (H)</td>
+                    <td>Name & DOP Required</td>
+                </tr>
+                <tr>
+                    <td><strong>UPSC (Civil Services / NDA)</strong></td>
+                    <td>20 KB to 300 KB</td>
+                    <td>Min 350x350 pixels</td>
+                    <td>Name & Date Required</td>
+                </tr>
+                <tr>
+                    <td><strong>IBPS / SBI (Banking)</strong></td>
+                    <td>20 KB to 50 KB</td>
+                    <td>4.5 cm (H) x 3.5 cm (W)</td>
+                    <td>Plain Background</td>
+                </tr>
+                <tr>
+                    <td><strong>Railway (RRB NTPC/Group D)</strong></td>
+                    <td>15 KB to 40 KB</td>
+                    <td>35 mm x 45 mm</td>
+                    <td>Name & Date Preferred</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>How to Resize Photo to 20KB - 50KB for SSC Exams?</h2>
+        <p>Using traditional software like Photoshop or basic mobile apps to reduce image size often results in blurry or distorted images. Our tool uses a proprietary client-side compression algorithm. Here is a simple step-by-step process:</p>
+        <ol>
+            <li><strong>Select your Image:</strong> Tap the upload zone above and choose a raw photograph from your mobile gallery or PC.</li>
+            <li><strong>Enter Candidate Details:</strong> Type your full name (in CAPITAL letters, as preferred by SSC) and select the Date of Photo (DOP) from the calendar.</li>
+            <li><strong>Select Compression Target:</strong> Choose the '20KB - 50KB' option from the dropdown menu. This is the gold standard for most Sarkari exam portals.</li>
+            <li><strong>Live Preview & Verification:</strong> The tool automatically crops your image to the 3.5x4.5 ratio, appends a pristine white strip at the bottom, and prints your details in crisp black text.</li>
+            <li><strong>Download Securely:</strong> Click download. The file is saved directly to your local storage.</li>
+        </ol>
+
+        <h2>Why Does SSC Reject Photos? (Avoid These Mistakes)</h2>
+        <p>When applying for SSC exams, the automated verification system scrutinizes every pixel. To ensure your application is accepted, avoid these fatal errors:</p>
+        <ul>
+            <li><strong>No DOP (Date of Photo):</strong> SSC notifications explicitly state that the date the photograph was taken must be clearly printed. If you fail to <strong>edit date in image online</strong> properly, rejection is guaranteed.</li>
+            <li><strong>Oversized or Undersized Files:</strong> The portal will physically not accept files above 50KB. Conversely, files below 20KB are deemed too low-resolution and are rejected by invigilators.</li>
+            <li><strong>Incorrect Aspect Ratio:</strong> Uploading a square selfie or a landscape photo warps the image on the admit card. Our tool enforces a strict portrait aspect ratio.</li>
+            <li><strong>Spectacles and Caps:</strong> Do not wear dark glasses, tinted spectacles, or caps in your photograph. Both ears should be clearly visible.</li>
+        </ul>
+
+        <h2>The Technology: 100% Privacy and Zero Server Uploads</h2>
+        <p>You might wonder, "Is it safe to upload my official identity documents to a free website?" The answer with OrbitWebTools is a resounding <strong>YES</strong>. </p>
+        <p>Unlike other photo editors that upload your private data to cloud servers, our tool utilizes the HTML5 Canvas API. This means the entire process of adding text, cropping, and compressing happens locally inside your device's web browser (Chrome, Safari, Edge). The moment you close the tab, the data ceases to exist. We do not have access to your photos, ensuring absolute privacy for your sensitive government documents.</p>
+
+        <h2>Frequently Asked Questions (FAQs)</h2>
+        <h3>How can I add name and date to passport photo online free without an app?</h3>
+        <p>You do not need to download any application. Simply open OrbitWebTools on your mobile browser, upload your photo, enter your name and date, and download. It is entirely web-based and free.</p>
+        
+        <h3>What is the meaning of DOP in SSC photo?</h3>
+        <p>DOP stands for "Date of Photograph". It indicates the exact date when the picture was clicked. Most government bodies require the photo to be no older than 3 to 6 months from the date of application publication.</p>
+        
+        <h3>How to compress JPEG to 20kb for signature?</h3>
+        <p>Our tool also acts as a signature resizer. After uploading your scanned signature, select the "Signature / Thumb (10KB - 20KB)" option from the dropdown menu. The engine will compress it instantly without losing legibility.</p>
+    </article>
+    
+    <div class="seo-fade" id="seoFade">
+        <button onclick="toggleSEO()" class="seo-toggle-btn">📖 Read Ultimate Exam Photo Guide</button>
+    </div>
+    
+    <div id="seoCollapseBtn" class="collapse-btn-container">
+        <button onclick="toggleSEO()" class="seo-toggle-btn">⬆️ Collapse Guide</button>
+    </div>
 </div>
-
-<article class="seo-content hidden-seo" id="seoContentBox">
-    <h2>Comprehensive Guide: Add Name and Date to Passport Photo Online Free</h2>
-    <p>Millions of Indian students apply for government jobs every year. However, according to official data, thousands of applications for exams like SSC CGL, SSC CHSL, UPSC Civil Services, and Railway RRB are rejected outright. The most common reason? <strong>An incorrect passport-size photograph.</strong></p>
-    <p>If you are looking for a reliable way to <strong>add name and date to passport photo online free</strong>, you are in the right place. OrbitWebTools has developed a highly advanced, browser-based utility that not only adds your Name and Date of Photo (DOP) but also acts as an automatic <strong>SSC photo resizer online (20kb to 50kb)</strong>.</p>
-
-    <h2>Official Exam Photo Requirements (2026 Guidelines)</h2>
-    <p>Every recruitment board has strict dimensional and byte-size requirements. Before you upload, ensure your image matches the criteria below. Our tool automatically configures your image to fit these standard requirements.</p>
-    
-    <table class="seo-table">
-        <thead>
-            <tr>
-                <th>Recruitment Board</th>
-                <th>Required File Size</th>
-                <th>Dimensions</th>
-                <th>Mandatory Text Strip</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><strong>SSC (Staff Selection Commission)</strong></td>
-                <td>20 KB to 50 KB</td>
-                <td>3.5 cm (W) x 4.5 cm (H)</td>
-                <td>Name & DOP Required</td>
-            </tr>
-            <tr>
-                <td><strong>UPSC (Civil Services / NDA)</strong></td>
-                <td>20 KB to 300 KB</td>
-                <td>Min 350x350 pixels</td>
-                <td>Name & Date Required</td>
-            </tr>
-            <tr>
-                <td><strong>IBPS / SBI (Banking)</strong></td>
-                <td>20 KB to 50 KB</td>
-                <td>4.5 cm (H) x 3.5 cm (W)</td>
-                <td>Plain Background</td>
-            </tr>
-            <tr>
-                <td><strong>Railway (RRB NTPC/Group D)</strong></td>
-                <td>15 KB to 40 KB</td>
-                <td>35 mm x 45 mm</td>
-                <td>Name & Date Preferred</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <h2>How to Resize Photo to 20KB - 50KB for SSC Exams?</h2>
-    <p>Using traditional software like Photoshop or basic mobile apps to reduce image size often results in blurry or distorted images. Our tool uses a proprietary client-side compression algorithm. Here is a simple step-by-step process:</p>
-    <ol>
-        <li><strong>Select your Image:</strong> Tap the upload zone above and choose a raw photograph from your mobile gallery or PC.</li>
-        <li><strong>Enter Candidate Details:</strong> Type your full name (in CAPITAL letters, as preferred by SSC) and select the Date of Photo (DOP) from the calendar.</li>
-        <li><strong>Select Compression Target:</strong> Choose the '20KB - 50KB' option from the dropdown menu. This is the gold standard for most Sarkari exam portals.</li>
-        <li><strong>Live Preview & Verification:</strong> The tool automatically crops your image to the 3.5x4.5 ratio, appends a pristine white strip at the bottom, and prints your details in crisp black text.</li>
-        <li><strong>Download Securely:</strong> Click download. The file is saved directly to your local storage.</li>
-    </ol>
-
-    <h2>Why Does SSC Reject Photos? (Avoid These Mistakes)</h2>
-    <p>When applying for SSC exams, the automated verification system scrutinizes every pixel. To ensure your application is accepted, avoid these fatal errors:</p>
-    <ul>
-        <li><strong>No DOP (Date of Photo):</strong> SSC notifications explicitly state that the date the photograph was taken must be clearly printed. If you fail to <strong>edit date in image online</strong> properly, rejection is guaranteed.</li>
-        <li><strong>Oversized or Undersized Files:</strong> The portal will physically not accept files above 50KB. Conversely, files below 20KB are deemed too low-resolution and are rejected by invigilators.</li>
-        <li><strong>Incorrect Aspect Ratio:</strong> Uploading a square selfie or a landscape photo warps the image on the admit card. Our tool enforces a strict portrait aspect ratio.</li>
-        <li><strong>Spectacles and Caps:</strong> Do not wear dark glasses, tinted spectacles, or caps in your photograph. Both ears should be clearly visible.</li>
-    </ul>
-
-    <h2>The Technology: 100% Privacy and Zero Server Uploads</h2>
-    <p>You might wonder, "Is it safe to upload my official identity documents to a free website?" The answer with OrbitWebTools is a resounding <strong>YES</strong>. </p>
-    <p>Unlike other photo editors that upload your private data to cloud servers, our tool utilizes the HTML5 Canvas API. This means the entire process of adding text, cropping, and compressing happens locally inside your device's web browser (Chrome, Safari, Edge). The moment you close the tab, the data ceases to exist. We do not have access to your photos, ensuring absolute privacy for your sensitive government documents.</p>
-
-    <h2>Frequently Asked Questions (FAQs)</h2>
-    <h3>How can I add name and date to passport photo online free without an app?</h3>
-    <p>You do not need to download any application. Simply open OrbitWebTools on your mobile browser, upload your photo, enter your name and date, and download. It is entirely web-based and free.</p>
-    
-    <h3>What is the meaning of DOP in SSC photo?</h3>
-    <p>DOP stands for "Date of Photograph". It indicates the exact date when the picture was clicked. Most government bodies require the photo to be no older than 3 to 6 months from the date of application publication.</p>
-    
-    <h3>How to compress JPEG to 20kb for signature?</h3>
-    <p>Our tool also acts as a signature resizer. After uploading your scanned signature, select the "Signature / Thumb (10KB - 20KB)" option from the dropdown menu. The engine will compress it instantly without losing legibility.</p>
-</article>
 
 <footer class="footer">
   <div class="footer-logo">Orbit<span>Web</span>Tools</div>
@@ -291,17 +288,25 @@ canvas { display: block; max-width: 100%; height: auto; border-radius: 8px; box-
 </footer>
 
 <script>
-// --- SEO Toggle Logic ---
+// --- Premium Expand/Collapse Logic for SEO Content ---
 function toggleSEO() {
     const box = document.getElementById('seoContentBox');
-    const btn = document.getElementById('seoToggleBtn');
-    box.classList.toggle('hidden-seo');
-    if(box.classList.contains('hidden-seo')) {
-        btn.innerText = '📚 Read Ultimate Photo Guide for Exams (1000+ Words)';
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+    const fade = document.getElementById('seoFade');
+    const collapseBtn = document.getElementById('seoCollapseBtn');
+    
+    box.classList.toggle('expanded');
+    
+    if (box.classList.contains('expanded')) {
+        fade.style.opacity = '0'; // Hide the gradient
+        setTimeout(() => { fade.style.display = 'none'; }, 300); // Wait for transition
+        collapseBtn.style.display = 'block'; // Show collapse button
     } else {
-        btn.innerText = 'Hide Guide & Return to Tool';
-        box.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        fade.style.display = 'flex'; // Bring back the gradient container
+        setTimeout(() => { fade.style.opacity = '1'; }, 10); // Trigger transition
+        collapseBtn.style.display = 'none'; // Hide collapse button
+        
+        // Scroll back to the top of the SEO section smoothly
+        document.getElementById('seoWrapper').scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 }
 
